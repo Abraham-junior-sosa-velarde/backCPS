@@ -6,6 +6,8 @@ import { createRoles } from "./utils/initialSetup";
 import cors from "cors";
 //routes
 import authRoutes from "./routes/auth.routes";
+import MonthlyFormRoutes from "./routes/MonthlyForm.routes";
+import CompaniesRoutes from "./routes/company.routes";
 
 const app = express();
 const corsOptions = {
@@ -30,5 +32,7 @@ app.get("/", (req, res) => {
   });
 });
 app.use("/auth", authRoutes);
+app.use("/MonthlyForm", MonthlyFormRoutes);
+app.use("/Company", CompaniesRoutes);
 
 export default app;
